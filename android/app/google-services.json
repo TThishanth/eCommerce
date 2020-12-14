@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "979481058710",
+    "firebase_url": "https://catchup-d66d7.firebaseio.com",
+    "project_id": "catchup-d66d7",
+    "storage_bucket": "catchup-d66d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979481058710:android:4d7f66fc6d9c03ef5991b7",
+        "android_client_info": {
+          "package_name": "com.example.eCommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979481058710-i0sv0coenc4je3unfh7rd27bkchgpnmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eCommerce",
+            "certificate_hash": "b180463b30c777c5682e63d5c51b9c349cb7f3d5"
+          }
+        },
+        {
+          "client_id": "979481058710-d42uqhijflobdjcup6oeahqf786rmq3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWG-Lt1v3O3XbWXlE8FYC85nqivYF0aOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979481058710-d42uqhijflobdjcup6oeahqf786rmq3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
