@@ -1,4 +1,4 @@
-# EasyBuy Flutter Application (Ongoing)
+# EasyBuy Flutter Application 
 
 It’s an e-Commerce mobile app.
 
