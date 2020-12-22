@@ -2,14 +2,12 @@ import 'package:flutter/foundation.dart';
 
 class CartItem {
   final String id;
-  //final String ownerId;
   final String title;
   final int quantity;
   final double price;
 
   CartItem({
     @required this.id,
-    //this.ownerId,
     @required this.title,
     @required this.quantity,
     @required this.price,

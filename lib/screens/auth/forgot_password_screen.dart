@@ -22,13 +22,35 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     if (_isValid) {
       Provider.of<Authentication>(context, listen: false)
           .resetPassword(email)
-          .whenComplete(() {
+          .then((_) {
+            _resetPasswordController.clear();
+
         SnackBar snackBar = SnackBar(
           content: Text('A password reset link has been sent to ' + email),
           backgroundColor: Colors.orange,
         );
 
         _resetPasswordKey.currentState.showSnackBar(snackBar);
+      }).catchError((error){
+        
+          _resetPasswordController.clear();
+
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text('Error Occured!'),
+                content: Text(error.toString()),
+                actions: [
+                  FlatButton(
+                      child: Text('OK'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      }),
+                ],
+              );
+            },
+          );
       });
     }
   }

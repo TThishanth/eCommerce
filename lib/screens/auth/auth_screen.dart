@@ -35,31 +35,92 @@ class _AuthScreenState extends State<AuthScreen> {
 
         if (_isLogIn) {
           Provider.of<Authentication>(context, listen: false)
-              .signIn(email, password, context);
+              .signIn(
+            email,
+            password,
+            context,
+          )
+              .catchError((error) {
+            setState(() {
+              _isLoading = false;
+            });
+
+            _emailController.clear();
+            _passwordController.clear();
+
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text('Error Occured!'),
+                  content: Text(error.toString()),
+                  actions: [
+                    FlatButton(
+                        child: Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        }),
+                  ],
+                );
+              },
+            );
+          });
         } else {
-          Provider.of<Authentication>(context, listen: false)
-              .signUp(name, email, password, context);
+          Provider.of<Authentication>(context, listen: false).signUp(
+            name,
+            email,
+            password,
+            context,
+          ).catchError((error){
+            setState(() {
+              _isLoading = false;
+            });
+
+            _nameController.clear();
+            _emailController.clear();
+            _passwordController.clear();
+            _reTypePasswordController.clear();
+
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text('Error Occured!'),
+                  content: Text(error.toString()),
+                  actions: [
+                    FlatButton(
+                        child: Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        }),
+                  ],
+                );
+              },
+            );
+          });
         }
-      } on FirebaseAuthException catch (e) {
-        var message = 'An error occured, Please check your credentials.';
-
-        if (e.message != null) {
-          message = e.message;
-        }
-
-        Scaffold.of(context).showSnackBar(
-          SnackBar(
-            content: Text(message),
-            backgroundColor: Theme.of(context).errorColor,
-          ),
-        );
-
+      } catch (error) {
         setState(() {
           _isLoading = false;
         });
-      } catch (e) {
-        print(e);
-      }
+
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Error Occured!'),
+              content: Text(error.toString()),
+              actions: [
+                FlatButton(
+                    child: Text('OK'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    }),
+              ],
+            );
+          },
+        );
+      } 
     }
   }
 

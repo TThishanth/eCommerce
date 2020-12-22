@@ -11,9 +11,12 @@ class Products with ChangeNotifier {
 
   List<Product> get items {
     if (_isSearch) {
-      return _items.where((prod) => prod.title.compareTo(_searchString) >= 0 || prod.title.toLowerCase().compareTo(_searchString) >= 0 || prod.shortInfo.compareTo(_searchString) >= 0 || prod.shortInfo.toLowerCase().compareTo(_searchString) >= 0).toList();
-    }
-    if (_showFavoritesOnly) {
+      return _items
+          .where((prod) =>
+              prod.title.toLowerCase().compareTo(_searchString) >= 0 ||
+              prod.shortInfo.toLowerCase().compareTo(_searchString) >= 0)
+          .toList();
+    } else if (_showFavoritesOnly) {
       return _items.where((prod) => prod.isFavorite).toList();
     }
     return [..._items];

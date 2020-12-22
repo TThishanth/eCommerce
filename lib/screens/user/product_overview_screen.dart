@@ -94,6 +94,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
             });
             if (_isSearch == false) {
               _searchController.clear();
+              FocusScope.of(context).unfocus();
             }
           },
         ),

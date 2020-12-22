@@ -27,7 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
         }
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
-            return circularProgress();
+            return Scaffold(
+              body: circularProgress(),
+            );
             break;
           default:
             return checkRole(snapshot.data);
