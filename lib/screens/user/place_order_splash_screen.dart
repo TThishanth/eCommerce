@@ -41,7 +41,7 @@ class _OrderSplashScreenState extends State<OrderSplashScreen> {
                 text: 'Cash',
                 style: GoogleFonts.galada(
                   textStyle: TextStyle(
-                    fontSize: 56.0,
+                    fontSize: 50.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.orange,
                   ),
@@ -50,7 +50,7 @@ class _OrderSplashScreenState extends State<OrderSplashScreen> {
                   TextSpan(
                     text: 'On',
                     style: TextStyle(
-                      fontSize: 56.0,
+                      fontSize: 50.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.blueGrey,
                     ),
@@ -58,7 +58,7 @@ class _OrderSplashScreenState extends State<OrderSplashScreen> {
                   TextSpan(
                     text: 'Delivery',
                     style: TextStyle(
-                      fontSize: 56.0,
+                      fontSize: 50.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.blueGrey,
                     ),

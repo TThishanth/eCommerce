@@ -65,12 +65,14 @@ class _AuthScreenState extends State<AuthScreen> {
             );
           });
         } else {
-          Provider.of<Authentication>(context, listen: false).signUp(
+          Provider.of<Authentication>(context, listen: false)
+              .signUp(
             name,
             email,
             password,
             context,
-          ).catchError((error){
+          )
+              .catchError((error) {
             setState(() {
               _isLoading = false;
             });
@@ -119,7 +121,7 @@ class _AuthScreenState extends State<AuthScreen> {
             );
           },
         );
-      } 
+      }
     }
   }
 
@@ -436,11 +438,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     height: 5.0,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 50.0),
+                    width: double.infinity,
                     padding: EdgeInsets.only(bottom: 50.0),
                     alignment: Alignment.bottomRight,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           _isLogIn
@@ -455,7 +457,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             });
                           },
                           child: Text(
-                            _isLogIn ? 'Create Account' : 'Sign In',
+                            _isLogIn ? 'Sign Up' : 'Sign In',
                             style: TextStyle(
                               color: Colors.white,
                             ),

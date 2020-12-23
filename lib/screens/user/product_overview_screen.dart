@@ -195,7 +195,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               builder: (context, productsData, _) => productsData.items.isEmpty
                   ? emptyProductsScreen(isPotrait)
                   : GridView.builder(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(20.0),
                       itemCount: productsData.items.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,

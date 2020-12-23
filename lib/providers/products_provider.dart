@@ -13,8 +13,10 @@ class Products with ChangeNotifier {
     if (_isSearch) {
       return _items
           .where((prod) =>
-              prod.title.toLowerCase().compareTo(_searchString) >= 0 ||
-              prod.shortInfo.toLowerCase().compareTo(_searchString) >= 0)
+              prod.title.toLowerCase().contains(_searchString) ||
+              prod.title.contains(_searchString) ||
+              prod.shortInfo.toLowerCase().contains(_searchString) ||
+              prod.shortInfo.contains(_searchString))
           .toList();
     } else if (_showFavoritesOnly) {
       return _items.where((prod) => prod.isFavorite).toList();
